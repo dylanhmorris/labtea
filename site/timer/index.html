@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="The wonderful timer which helps you keep track of time while presenting your work at the Theoretical Ecology Lab Tea.">
+		<meta name="keywords" content="LabTea, Theoretical Ecology Lab Tea, Princeton, Princeton University, EEB, Ecology and Evolutionary Biology, Simon Levin, ecology, talks, timer">
+		<meta name="viewport" content="width=device-width">
+		<title>Lab Tea Timer</title>
+		<style>
+			html, body {
+				display: table;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				font-family: "Helvetica Neue", Helvetica, sans-serif;
+				text-align: center;
+				color: rgb(102, 204, 204);
+				background: #000;
+			}
+			header {
+				display: table-row;
+				height: 3rem;
+				vertical-align: bottom;
+			}
+			h1 {
+				display: table-cell;
+				vertical-align: bottom;
+			}
+			main {
+				display: table-row;
+				height: 100%;
+			}
+			time {
+				display: table-cell;
+				vertical-align: middle;
+				font-weight: bold;
+				font-size: 2.5cm;
+				letter-spacing: 1mm;
+				color: #fff;
+				padding-bottom: 1cm;
+			}
+			@media only screen and (min-width: 15cm) { time { font-size: 4cm; } }
+			@media only screen and (min-width: 20cm) { time { font-size: 6cm; } }
+			@media only screen and (min-width: 25cm) { time { font-size: 8cm; } }
+			@media only screen and (min-width: 30cm) { time { font-size: 10cm; } }
+			@media only screen and (min-width: 35cm) { time { font-size: 12cm; } }
+			@media only screen and (min-width: 40cm) { time { font-size: 14cm; } }
+			@media only screen and (min-width: 45cm) { time { font-size: 15cm; } }
+			@media only screen and (min-width: 50cm) { time { font-size: 16cm; } }
+			time.overtime {
+				color: #f00;
+				-webkit-animation: burn 2s;
+				animation: burn 2s;
+			}
+			@-webkit-keyframes burn {
+				from { text-shadow: 0 0 0.5em yellow; }
+				to { text-shadow: none; }
+			}
+			@keyframes burn {
+				from { text-shadow: 0 0 0.5em yellow; }
+				to { text-shadow: none; }
+			}
+			span:focus {
+				outline: 0;
+			}
+			.sep {
+				font-family: Georgia, sans-serif;
+				font-size: 80%;
+				vertical-align: 15%;
+			}
+			footer {
+				display: table-row;
+				height: 6rem;
+			}
+			input {
+				display: inline-block;
+				height: 4rem;
+				width: 4rem;
+				padding: 0;
+				margin: 0;
+				font-size: 1.5em;
+				border: none;
+				border-radius: 50%;
+				vertical-align: 1rem;
+				-webkit-appearance: none;
+				-webkit-font-smoothing: subpixel-antialiased;
+				font-weight: bold;
+				cursor: pointer;
+				outline: none;
+				text-shadow: 0 -1px 0 #009f00;
+				background: #0ec518;
+				color: #fff;
+				box-shadow: 0 0 0.65rem 0.15rem rgba(255, 255, 255, .3),
+					inset 0 -2px 0 0.15rem #009f00,
+					inset 0 0.25rem rgba(255, 255, 255, 0.25);
+			}
+			input:hover {
+				box-shadow: 0 0 0.65rem 0.25rem rgba(255, 255, 255, .3),
+					inset 0 -2px 0 0.15rem #009f00,
+					inset 0 0.25rem rgba(255, 255, 255, 0.25);
+			}
+			input:active {
+				box-shadow: inset 0 -2px 0 0.1rem #009f00,
+					inset 0 0.15rem rgba(255, 255, 255, 0.15);
+			}
+			ul {
+				display: inline-block;
+				text-align: left;
+			}
+			input.running {
+				background: #e53030;
+				color: #fff;
+				text-shadow: 0 -1px 0 #cc1717;
+				box-shadow: 0 0 0.65rem 0.15rem rgba(255, 255, 255, .3),
+					inset 0 -2px 0 0.15rem #cc1717,
+					inset 0 0.25rem rgba(255, 255, 255, 0.25);
+			}
+			input.running:hover {
+				box-shadow: 0 0 0.65rem 0.25rem rgba(255, 255, 255, .3),
+					inset 0 -2px 0 0.15rem #cc1717,
+					inset 0 0.25rem rgba(255, 255, 255, 0.25);
+			}
+			input.running:active {
+				box-shadow: inset 0 -2px 0 0.1rem #cc1717,
+					inset 0 0.15rem rgba(255, 255, 255, 0.15);
+			}
+			ul {
+				display: inline-block;
+				text-align: left;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Lab Tea Timer</h1>
+		</header>
+		<main>
+			<time id="timer"><span id="minutes" contenteditable>20</span><span class="sep">:</span><span id="seconds" contenteditable>00</span></time>
+		</main>
+		<footer>
+			<input type="button" id="button" value="Go!">
+			<ul>
+				<li>Press the button or any key to start.</li>
+				<li>Press the button or any key to pause/resume.</li>
+				<li>You can edit the time directly while in pause.</li>
+			</ul>
+		</footer>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
+		<script>
+			// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+			// http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
+			// requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
+			// MIT license
+			(function() {
+				var lastTime = 0;
+				var vendors = ['ms', 'moz', 'webkit', 'o'];
+				for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+					window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+					window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
+					                           || window[vendors[x]+'CancelRequestAnimationFrame'];
+				}
+				if (!window.requestAnimationFrame)
+					window.requestAnimationFrame = function(callback, element) {
+						var currTime = new Date().getTime();
+						var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+						var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+						  timeToCall);
+						lastTime = currTime + timeToCall;
+						return id;
+					};
+				if (!window.cancelAnimationFrame)
+					window.cancelAnimationFrame = function(id) {
+						clearTimeout(id);
+					};
+			}());
+
+			var id, start, min, sec, overtime;
+			function loop() {
+				if ($.now() - start > 1000) {
+					if (overtime) {
+						if (++sec > 59) {
+							--min;
+							sec = 0;
+							$('#minutes').text(min);
+						}
+						$('#seconds').text(sec < 10 ? '0' + sec : sec);
+					} else {
+						if (--sec < 0) {
+							if (--min < 0) {
+								overtime = true;
+								$('#timer').addClass('overtime');
+								min = 0;
+								sec = 0;
+								$('#minutes').text('-0');
+								$('#seconds').text('00');
+								id = window.requestAnimationFrame(loop);
+								return
+							}
+							sec = 59;
+							$('#minutes').text(min);
+						}
+						$('#seconds').text(sec < 10 ? '0' + sec : sec);
+					}
+					start += 1000;
+				}
+				id = window.requestAnimationFrame(loop);
+			}
+
+			function toggle() {
+				if (id) {
+					window.cancelAnimationFrame(id);
+					id = undefined;
+					$('#button').removeClass('running');
+					$('#button').val('Go!');
+					$('#minutes, #seconds').attr('contenteditable', '');
+				} else {
+					$('#button').addClass('running');
+					$('#button').val('Stop');
+					$('#minutes, #seconds').removeAttr('contenteditable');
+					min = parseInt($('#minutes').text(), 10);
+					sec = parseInt($('#seconds').text(), 10);
+					overtime = $('#minutes').text()[0] === '-';
+					start = $.now();
+					loop();
+				}
+			}
+
+			$(document).ready(function() {
+				$('#button').click(toggle);
+				$(document).keypress(function(e) {
+					if ($('#minutes').is(':focus') || $('#seconds').is(':focus')) {
+						if (e.which == 13) {
+							$('#minutes, #seconds').blur();
+						} else if ((e.which != 45 && e.which < 48) || e.which > 57) {
+							e.preventDefault();
+						}
+					} else {
+						toggle();
+					}
+				});
+				$('#minutes, #seconds').blur(function(e) {
+					if ($('#minutes').text()[0] === '-') {
+						$('#timer').addClass('overtime');
+					} else {
+						$('#timer').removeClass('overtime');
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
