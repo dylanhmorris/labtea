@@ -3,24 +3,54 @@ talks:
     time: 12:30:00
     speaker: Juan-Carlos Rocha
     title: Two brief talks on social-ecological systems
-    abstract: "<i>Cascading effects of critical transitions in social-ecological systems</i><br/>Critical transitions in nature and society are likely to occur more often and  severe as humans increase they pressure on the world ecosystems. Yet it is largely 
-      unknown how these transitions will interact, whether the occurrence of one will increase<i>Cascading effects of critical transitions in social-ecological systems</i><br/>Critical transitions in nature and society are likely to occur more often and  severe as humans increase they pressure on the world ecosystems. Yet it is largely 
-      unknown how these transitions will interact, whether the occurrence of one will increase<i>Cascading effects of critical transitions in social-ecological systems</i><br/>Critical transitions in nature and society are likely to occur more often and  severe as humans increase they pressure on the world ecosystems. Yet it is largely 
-      unknown how these transitions will interact, whether the occurrence of one will increase<i>Cascading effects of critical transitions in social-ecological systems</i><br/>Critical transitions in nature and society are likely to occur more often and  severe as humans increase they pressure on the world ecosystems. Yet it is largely 
-      unknown how these transitions will interact, whether the occurrence of one will increase<i>Cascading effects of critical transitions in social-ecological systems</i><br/>Critical transitions in nature and society are likely to occur more often and  severe as humans increase they pressure on the world ecosystems. Yet it is largely 
-      unknown how these transitions will interact, whether the occurrence of one will increase<i>Cascading effects of critical transitions in social-ecological systems</i><br/>Critical transitions in nature and society are likely to occur more often and  severe as humans increase they pressure on the world ecosystems. Yet it is largely 
-      unknown how these transitions will interact, whether the occurrence of one will increase<i>Cascading effects of critical transitions in social-ecological systems</i><br/>Critical transitions in nature and society are likely to occur more often and  severe as humans increase they pressure on the world ecosystems. Yet it is largely 
-      unknown how these transitions will interact, whether the occurrence of one will increase<i>Cascading effects of critical transitions in social-ecological systems</i><br/>Critical transitions in nature and society are likely to occur more often and  severe as humans increase they pressure on the world ecosystems. Yet it is largely 
-      unknown how these transitions will interact, whether the occurrence of one will increase<i>Cascading effects of critical transitions in social-ecological systems</i><br/>Critical transitions in nature and society are likely to occur more often and  severe as humans increase they pressure on the world ecosystems. Yet it is largely 
-      unknown how these transitions will interact, whether the occurrence of one will increase<i>Cascading effects of critical transitions in social-ecological systems</i><br/>Critical transitions in nature and society are likely to occur more often and  severe as humans increase they pressure on the world ecosystems. Yet it is largely 
-      unknown how these transitions will interact, whether the occurrence of one will increase<i>Cascading effects of critical transitions in social-ecological systems</i><br/>Critical transitions in nature and society are likely to occur more often and  severe as humans increase they pressure on the world ecosystems. Yet it is largely 
-      unknown how these transitions will interact, whether the occurrence of one will increase<i>Cascading effects of critical transitions in social-ecological systems</i><br/>Critical transitions in nature and society are likely to occur more often and  severe as humans increase they pressure on the world ecosystems. Yet it is largely 
-      unknown how these transitions will interact, whether the occurrence of one will increase"
+    abstract: "<i>Cascading effects of critical transitions in social-ecological systems</i>
+<br/>Critical transitions in nature and society are likely to occur more often and severe as humans increase they pressure on the world ecosystems. Yet it is largely unknown how these transitions will interact, whether the occurrence of one will increase the likelihood of another, and whether these potential teleconnections (social and ecological) correlate critical transition in distant places. Here we present a framework for exploring three types of potential cascading effects  of critical transitions: forks, domino effects and inconvenient feedbacks. Drivers and feedback mechanisms are reduced to a network form that allow us to explore drivers co-occurrence (forks). Sharing drivers is likely to increase correlation in time or space among critical transitions but not necessarily interdependence. Random walks on causal networks allow us to detect and compare communities of common drivers and feedback mechanisms across different critical transitions. Domino effects and inconvenient feedbacks were identified by mapping new circular pathways on coupled networks that have not been previously reported. The method serves as a platform for hypothesis exploration of plausible new feedbacks between critical transitions in social-ecological systems; it helps to scope structural interdependence and hence an avenue for future modelling and empirical testing of regime shifts coupling.</p>
+<p></p>
+<i>Behavioural economics in social-ecological systems with thresholds</i><br />
+
+How does people behave when dealing with situations pervaded by thresholds? Imagine you’re a fisherman whose livelihoods depend on a resource on the brink to collapse, what would you do? and what do you think others will do? Here we report results form a field experiment with fishermen from four coastal communities in the Colombian Caribbean. A dynamic game with 256 fishermen helped us investigate behavioural responses to the existence of thresholds (probability =1 ), risk (threshold with a climate event with known probability of 0.5) and uncertainty (threshold with an unknown probability climate event). Communication was allowed during the game and the social dilemma was confronted in groups of 4 fishermen. We found that fishermen facing thresholds presented a more conservative behaviour on the exploration of the parameter space of resource exploitation. Some groups that crossed the threshold managed to recover to a regime of high fish reproduction rate. However, complementary survey data reveals that groups that collapsed the resource in the game come often from communities with high livelihood diversification, lower resource dependence and strongly exposed to infrastructure development. We speculate that the later translates on higher noise levels on resource dynamics which decouples or mask the relationship between fishing efforts and stock size encouraging a more explorative behaviour of fishing effort in real life. This context is brought to our artificial game and leave statistical signatures on resource exploitation patterns. In general, people adopt a precautionary behaviour when dealing with common pool resource dilemmas with thresholds. However, stochasticity can trigger the opposite behaviour."
 
   - date: 2016-09-21
     time: 12:30:00
-    title: Speaking slot available 
 
-  - date: 2016-09-25
+  - date: 2016-09-28
+    time: 12:30:00
+
+  - date: 2016-10-05
     time: 12:30:00
     speaker: Prof. Mary C. Stoddard
+
+  - date: 2016-10-12
+    time: 12:30:00
+
+  - date: 2016-10-19
+    time: 12:30:00
+    speaker: Daniel Cooney
+
+  - date: 2016-10-26
+    time: 12:30:00
+    speaker: Georgios Artavanis
+
+  - date: 2016-11-02
+    time: 12:30:00
+    speaker: "<i>Fall break - no Lab Tea</i>"
+    title: ""
+
+  - date: 2016-11-09
+    time: 12:30:00
+    speaker: Sarah Drohan
+
+  - date: 2016-11-16
+    time: 12:30:00
+    speaker: George Hagstrom
+
+  - date: 2016-11-23
+    time: 12:30:00
+    speaker: "<i>Thanksgiving break - no Lab Tea</i>"
+    title: ""
+
+  - date: 2016-12-07
+    time: 12:30:00
+
+  - date: 2016-12-14
+    time: 12:30:00

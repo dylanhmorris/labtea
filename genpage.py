@@ -6,6 +6,7 @@ import jinja2
 import datetime as dt
 import pytz as tz
 import os
+from operator import itemgetter
 
 
 def suffix(natural_number):
@@ -53,7 +54,7 @@ def get_datetime(talk):
                             "(24 hour clock) in your data file")
 
     base_date = dt.datetime.combine(talk["date"],
-                                          dt.datetime.min.time())
+                                    dt.datetime.min.time())
     return base_date + dt.timedelta(seconds=talk["time"])
 
 
@@ -79,35 +80,45 @@ def generate_file(output_file,
     from it.
     """
     data = yaml.load(open(data_file, 'r', encoding="utf-8"))
-
     for talk in data["talks"]:
         set_defaults(talk)
         talkdt = get_datetime(talk)
         talk["datetime"] = talks_timezone.localize(talkdt)
         gen_string_datetimes(talk)
 
+    sorted_talks = sorted(data["talks"], key=itemgetter("datetime"))
+    # make sure talks are in temporal order
+
     timestamp = dt.datetime.now()
     updated_date = timestamp.date()
     updated = {
-        "isodatetime": timestamp.isoformat(),
-        "usadate": updated_date.strftime("%B %d"),
-        "datesuffix": suffix(updated_date.day)
-        }
+            "isodatetime": timestamp.isoformat(),
+            "usadate": updated_date.strftime("%B %d"),
+            "datesuffix": suffix(updated_date.day),
+            "year": updated_date.year
+    }
 
     template_dir = os.path.abspath(template_subdir)
     renderer = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir))
     template = renderer.get_template(template_file)
 
     output_path = os.path.join(output_dir, output_file)
-    output = open(output_path, 'w')
+    output = open(output_path, 'w', encoding="utf")
     output.write(
         template.render(
-            talks=data["talks"],
+            talks=sorted_talks,
             updated=updated)
         )
     output.close()
 
+
 if __name__ == "__main__":
+    if len(sys.argv) < 4:
+        raise BaseException("Please provide, in order, "
+                            "the name of the output file, "
+                            "the name of the template file, "
+                            "and the name of the data file")
+
     generate_file(sys.argv[1],
                   sys.argv[2],
                   sys.argv[3])
