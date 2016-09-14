@@ -1,12 +1,48 @@
 #!/usr/bin/env python3
 
 import yaml
-import sys
 import jinja2
 import datetime as dt
 import pytz as tz
 import os
 from operator import itemgetter
+from argparse import ArgumentParser
+
+
+def get_args_with_options():
+    parser = ArgumentParser(
+        description="Uses YAML source to populate Jinja2 template " +
+                    "for Lab Tea website index")
+
+    parser.add_argument(
+        "-o", "--output-dir",
+        default='site',
+        metavar="OUTPUT_DIR",
+        dest="output_dir",
+        help="Output directory for generated file(s). Defaults to site/")
+
+    parser.add_argument(
+        "-u", "--updater",
+        default=None,
+        metavar=("NAME", "EMAIL"),
+        help="Name and email address of person updating the page",
+        nargs=2)
+
+    parser.add_argument(
+        "-t", "--template-dir",
+        default='templates',
+        dest='template_dir',
+        metavar="TEMPLATE_DIR",
+        help="directory in which to look for template file. Defaults to templates/")
+
+    parser.add_argument("outfile",
+                        help="name of output file for compiled html")
+    parser.add_argument("template",
+                        help="name of template file")
+    parser.add_argument("datafile",
+                        help="name of file containing site data")
+
+    return parser.parse_args()
 
 
 def suffix(natural_number):
@@ -72,8 +108,9 @@ def generate_file(output_file,
                   template_file,
                   data_file,
                   output_dir="site",
-                  talks_timezone=tz.timezone("US/Eastern"),
-                  template_subdir="templates"):
+                  template_subdir="templates",
+                  updater=None,
+                  talks_timezone=tz.timezone("US/Eastern")):
     """
     Reads the yaml database and
     populates the jinja2 template
@@ -98,6 +135,12 @@ def generate_file(output_file,
             "year": updated_date.year
     }
 
+    if updater:
+        updated.update(
+                {"name": updater[0],
+                 "email": updater[1]}
+                )
+
     template_dir = os.path.abspath(template_subdir)
     renderer = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir))
     template = renderer.get_template(template_file)
@@ -113,12 +156,10 @@ def generate_file(output_file,
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 4:
-        raise BaseException("Please provide, in order, "
-                            "the name of the output file, "
-                            "the name of the template file, "
-                            "and the name of the data file")
-
-    generate_file(sys.argv[1],
-                  sys.argv[2],
-                  sys.argv[3])
+    args = get_args_with_options()
+    generate_file(args.outfile,
+                  args.template,
+                  args.datafile,
+                  args.output_dir,
+                  args.template_dir,
+                  args.updater)
