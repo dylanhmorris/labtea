@@ -61,12 +61,20 @@ def suffix(natural_number):
 
 def set_defaults(talk):
     talk.setdefault("abstract", "")
-    talk.setdefault("title", "Talk title TBA")
     speaker = talk.setdefault("speaker", "")
     if len(speaker) < 1:
         talk["sched_speaker"] = "Available"
+        talk.setdefault("title", "Speaking slot available")
     else:
         talk["sched_speaker"] = speaker
+        talk.setdefault("title", "Talk title TBA")
+
+    # if no speaker, schedule shows that the slot is
+    # available and talk title defaults to "Speaking
+    # slot available".
+    #
+    # If there is a speaker but no title, title
+    # defaults to "Talk title TBA"
 
 
 def get_datetime(talk):
