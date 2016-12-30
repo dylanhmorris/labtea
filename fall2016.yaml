@@ -18,10 +18,10 @@
 #
 # If you need an actual quotation mark in a field (e.g. for a speaker
 # with an apostrophe in their name or a talk title with double-quotation
-# marks) encase your entire entry in double quotation marks and then
-# type single quotation marks (as you normally would) wherever they
-# should go, and tqo single quotation marks in a row (i.e. ''), wherever
-# you want double quotation marks.
+# marks) encase your entire entry in double quotation marks. You can
+# type single quotation marks (as you normally would) wherever you need a
+# single quotation mark or apostrophe. Where you need a double quotation
+# mark, type two single quotation marks in a row (i.e. '').
 #
 # 2) Times
 #
@@ -34,7 +34,8 @@
 # when a computer tries to guess what a user is thinking.
 #
 # Notably, the YAML parser currently interprets 12:30 (with no seconds
-# field) as 00:12:30, or 12 and a half minutes past midnight.
+# field) as 00:12:30, or 12.5 minutes past midnight.
+#
 # While an Eno 209-slumber party actually sounds kind of fun,
 # that's probably not what you'll typically indend to advertise
 # when you input 12:30, so heads up!
@@ -54,14 +55,20 @@ How does people behave when dealing with situations pervaded by thresholds? Imag
 
   - date: 2016-09-21
     time: 12:30:00
+    speaker: Ed Schrom
+    title: Simulating the evolution of immune system signaling networks
+    abstract: "Immune systems rely on networks of interacting signaling proteins to translate the detection of a parasite into an appropriate response. From fruit flies to humans, immune signaling networks appear extraordinarily complex. However, these networks do share a simple job: balancing the urgency of clearing the parasite with the costs of immunity itself, even in the face of parasitic attempts to disrupt signaling. This summer, Joaquin Prada and I have developed a theoretical model of the evolution of immune signaling networks to investigate the underlying network structures that 1) account for the inducibility of immunity, and 2) account for robustness against parasite interference with signaling processes."
 
   - date: 2016-09-28
     time: 12:30:00
+    speaker: Prof. Mary C. Stoddard
+    title: "''The Most Perfect Thing in the Universe?'' Form and Function of the Avian Egg"
 
   - date: 2016-10-05
     time: 12:30:00
-    speaker: Prof. Mary C. Stoddard
-    title: "''The Most Perfect Thing in the Universe?'' Form and Function of the Avian Egg"
+    speaker: Edward Tekwa
+    title: Why do fisheries evolve different harvest rates?
+    abstract: "The sustainability of renewable resources such as marine fish is strongly determined by harvest rate.  Fisheries set harvest rates according to ecological, economic, enforcement, and food security considerations.  In ecology, a traditional harvest rate target is one that generates the maximum sustainable yield (MSY) over the long term.  In economics, the value of future harvest is discounted against an alternative rate of return, which is the opportunity cost.  The higher the opportunity cost, the faster a fishery has to harvest in order to generate an equal return.  However, this optimization procedure assumes that revenue can be reinvested, whereas for fishery managers, the currency for success may neither be monetary or can be reinvested.  We model the  change in harvest rate as a function of opportunity cost, measured as food security, in a more myopic evolutionary framework.  We found that as opportunity cost increases, harvest rate evolves from MSY to a regime where MSY is unstable; instead, bistability evolves, with both high and low harvest rates attainable.  Empirically, global fishery pattern appears to follow the model predictions better than traditional ecological or economic recommendations.  Deviations from the predictions can be partly explained by a lack of management enforcement, leading to the open access problem where individual fishers respond to opportunity cost differently from regional managers, but where overexploitation is not the only possibility."
 
   - date: 2016-10-12
     time: 12:30:00
@@ -71,10 +78,16 @@ How does people behave when dealing with situations pervaded by thresholds? Imag
   - date: 2016-10-19
     time: 12:30:00
     speaker: Daniel Cooney
+    title: Evolutionary Game Theory with Selection at Multiple Scales
+    abstract: This talk will provide an introduction to models in evolutionary game theory which simultaneously study the effects of selection within groups and selection between groups. We will review recent research that uses the frequency-independent Moran process and differential equations, and then we will introduce a frequency-dependent model that brings evolutionary game theory into play. We will then discuss potential applications of this mathematical framework to study dynamics of network-structured populations and to explore epidemic models with competition at multiple scales.
 
   - date: 2016-10-26
     time: 12:30:00
     speaker: Georgios Artavanis
+    title: The effect of inequality on common pool resource dynamics
+    abstract: "The sustainable management of common pool resources (CPRs) requires cooperation among the individuals of the community, otherwise overharvesting can lead to the depletion of the resource. Thus, the study of the mechanisms and conditions that allow and reinforce the evolution of robust cooperation are of great interest: unless there is a framework of well-defined rules, short-term benefits will lead individuals to harvest above the sustainable threshold.
+<p>
+This talk will explore the role of inequality on common pool resource dynamics using an agent-based model: In a community that shares a CPR (R1), and each individual has private shares of another resource (R2), both of which contribute to the success of the individual, inequalities in the distribution of R2 may lead to cheating with respect to R1: traditional sanctions will be less effective against individuals with larger private shares, so a different framework of rules and sanctions might be needed to achieve robust cooperation. Extensions of the agent-based model to address other questions on CPR dynamics will also be discussed."
 
   - date: 2016-11-02
     time: 12:30:00
@@ -84,19 +97,35 @@ How does people behave when dealing with situations pervaded by thresholds? Imag
   - date: 2016-11-09
     time: 12:30:00
     speaker: Sarah Drohan
+    title: Modeling feedback loops in social-ecological systems
+    abstract: Understanding feedbacks is critical to identifying and explaining drivers, regime shifts, and alternative stable states in social-ecological systems. However, one must be careful when discussing the influence of positive feedback loops on the stability of a system  It can be easy to conflate the existence of positive feedback loops with the prospect of switching between alternative stable states, but that is far from a necessary and sufficient condition. We need mathematical tools that allow us to quantitatively understand the impact of these loops in dynamical systems and their role in alternative stable states. One such tool from the systems dynamics community that may be useful is Loop Eigenvalue Elasticity Analysis (LEEA). Given a causal loop diagram or dynamical system, this method attempts to identify the dominant loops through their influence on the eigenvalues of the system. I will explain the mechanics and calculations and apply this method to case studies. More generally, I aim to characterize systems and find counterexamples that shed light both on this technique and the dynamics involved in alternative stable states and social-ecological systems. 
 
   - date: 2016-11-16
     time: 12:30:00
     speaker: George Hagstrom
+    title: How should we make mechanistic models of the human microbiome?
+    abstract: The human microbiome is a complex ecosystem containing a diverse array of microbes. Their ecology is influenced by nutrient availability, social interactions, human immune systems, and the environment. Anticipating the visit of the Blaser lab, we present a modeling framework that attempts to capture the key forces that structure the human microbiome.
 
   - date: 2016-11-23
     time: 12:30:00
     speaker: "<i>Thanksgiving break - no Lab Tea</i>"
     title: ""
 
+  - date: 2016-11-30
+    time: 12:30:00
+    speaker: Liliana Salvador
+    title: Establishing the link between search spatial patterns and behavioural processes in the model system C. elegans
+    abstract: Understanding animal movement patterns and their associated behavioural processes is a critical aspect of foraging ecology. Previous work on model organisms searching on a bare environment showed that they use complex search strategies while exploring the environment, in which different behavioural processes act at multiple time scales, and movement strategies arise from a balance between intrinsic and extrinsic mechanisms. However, how these time scales and behavioural mechanisms relate to the spatial patterns generated during a search event is still unknown. This talk will provide an overview of the movement properties and intermittent behaviour of C.elegans to explore the link between spatial patterns of movement and behavioural processes, and gain insight into the role of these events in searching success.
+
   - date: 2016-12-07
     time: 12:30:00
     speaker: Wenying Liao
+    title: Coupling of carbon and nitrogen cycles selects for nitrogen fixation in tropical and boreal, but not temperate forests
+    abstract: "Nitrogen (N) is an essential limiting nutrient for primary production across many ecosystems. Symbiotic N-fixing plants (''N fixers''), which form symbiosis with N-fixing bacteria to convert atmospheric N2 gas to inorganic form for plant use, can be the dominant source of N input into biosphere where they are abundant. Their distribution, therefore, can profoundly influence global capacity of carbon (C) sequestration. One of the most intriguing puzzles in ecology is the paradoxical latitudinal pattern of N fixer distribution: Traditional paradigm argues that, because of their direct access to atmospheric N pool, N fixers should be competitively advantageous in N-limited environment. However, N fixers are common in tropical and boreal forests, but rare in temperate forests, despite the increasing N limitation from the equator to the poles. Here, we use a simple model, coupling the C and N cycles along latitude to explain the emergence of the bimodal distribution pattern."
+
 
   - date: 2016-12-14
     time: 12:30:00
+    speaker: Prof. Henry Horn
+    title: "Little Insights into Big Questions in Ecology (especially biodiversity: origin, regulation, and dynamics)"
+    abstract: "Some of the latest concepts in recent EEB seminars and in our Graduate Journal Club seem to fit the outline of the Ecology course that I gave in 1966 as a newly minted Boy Wonder Emeritus.  So “return with us now to those thrilling days of yesteryear” to extend Hutchinson and MacArthur’s (1957) geometric metaphor of the “fundamental niche,” and explore: (1) How niche dimensionality affects competition and multivariate statistics, (2) How physical constraints may liberate intriguing biology, (3) How and why forest succession succeeds, ... sometimes, and (4) Why details of natural history are crucial to spatial patterns, dispersal, and darned near everything else. <p></p> I shall pose my little insights by faking a technical understanding far beyond my formal mathematical training (maybe I’ll even confess how pathetic that training is).  My selfish goal is to ask you which insights might be worth following up, and where to find needed tools to do it."
