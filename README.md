@@ -17,9 +17,9 @@ The required arguments are:
 
 The bracketed arguments are optional. If used, they must come before the required arguments and immediately after the given hyphen-and-letter prefix. The defaults are as follows:
 
-``OUTPUT_DIR`` (the output directory): ``site``
-``NAME EMAIL`` (the name and email address of the person doing the update): none
-``TEMPLATE_DIR`` (which directory to look for the page template in): templates
+``OUTPUT_DIR`` (the output directory): ``site`` <br>
+``NAME EMAIL`` (the name and email address of the person doing the update): none <br>
+``TEMPLATE_DIR`` (which directory to look for the page template in): templates <br>
 
 Example:
 
