@@ -35,3 +35,24 @@ Example:
 
 #### Updating the website
 Generating and overwriting of ``index.html`` will be the main updating you do. The first time, make sure to save (or regenerate) previous semester's index filewith an archival name (e.g. ``labtea_fall2016.html``), push this archival version to the remote server, and add a link to this archived set of talks to the ``index.html.tmpl`` template.
+
+
+#### YAML syntax
+
+If you're unfamiliar with YAML (the human- and machine-readable database format used here) but are familiar with other key-value stores (e.g. JSON), you may find this useful: https://learnxinyminutes.com/docs/yaml/
+
+If you are wholly unfamiliar, the main traps to note are these:
+
+1) Quotation marks
+
+Single (') or double (") quotation marks are used in YAML to indicate a string (though they're typically not required for simple strings)
+
+If you need an actual quotation mark in a field (e.g. for a speaker with an apostrophe in their name or a talk title that includes double-quotation marks) begin by encasing your entire entry in double quotation marks. You can then type single quotation marks (as you normally would) wherever you need a single quotation mark or apostrophe. Wherever you need a double quotation mark, type two single quotation marks in a row (i.e. '').
+
+2) Times
+
+To be safe, always enter times as 24-hour clock times, with seconds. e.g. the traditional (at least in my day) lab tea time of 12:30pm should be rendered as 12:30:00.
+
+While I may eventually include code that coerces other time formats to an unambiguous 24-hour-clock time, there can always be quirks when a computer tries to guess what a user is thinking, so strict 24-hour HH:MM:SS is very much preferred.
+
+Notably, the YAML parser currently interprets 12:30 (with no seconds field) as 00:12:30, or 12.5 minutes past midnight. While an Eno 209-slumber party actually sounds kind of fun, that's probably not what you'll typically indend to advertise when you input 12:30, so heads up!
