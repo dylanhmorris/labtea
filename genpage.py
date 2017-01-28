@@ -153,6 +153,9 @@ def generate_file(output_file,
     renderer = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir))
     template = renderer.get_template(template_file)
 
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    
     output_path = os.path.join(output_dir, output_file)
     output = open(output_path, 'w', encoding="utf")
     output.write(
