@@ -1,11 +1,15 @@
 Resources for building the Theoretical Ecology Lab Tea website.
 
+#### Installing dependencies
+
+The python scripts provided here use modules not provided with most python distributions that are freely available from PyPI, the Python Package index. If you have the python3 package manager ``pip3`` installed, these requirements can be installed from the macOS or Unix command line by running ``make install`` from within the ``labtea`` directory. Alternatively (and on Windows machines), you can run ``pip3 install -r requirements.txt``. If you do not have ``python3``, you can try ``pip install -r requirements.txt``, but note that the program has not been tested for use with ``python 2.xx``
+
+
 #### Provided scripts
 A series of talks for a given semester should be stored as a ``YAML`` file (e.g. ``fall2016.yaml``.
 
-
 ##### genpage.py 
-You can then generate a page based upon the file from the Mac or *nix command line as follows:
+You can then generate a page based upon the file from a macOS or Unix command line as follows:
 
 ``python3 genpage.py [-o OUTPUT_DIR] [-u NAME EMAIL] [-t TEMPLATE_DIR] outfile template datafile``
 
