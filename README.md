@@ -8,7 +8,7 @@ Most of the resources provided here require ``python3``. Unfortunately, previous
 
 The scripts require a few modules freely available from [PyPI](https://pypi.python.org/pypi), the Python Package index. The recommended way to install these dependencies is via the package manager ``pip3``.
 
-If you have ``pip3`` you can install the required modules by running
+If you have ``pip3``, you can install the required modules by running
 
     make install
     
