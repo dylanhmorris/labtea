@@ -7,7 +7,7 @@ import pytz as tz
 import os
 from operator import itemgetter
 from argparse import ArgumentParser
-
+import sys
 
 def get_args_with_options():
     parser = ArgumentParser(
@@ -103,11 +103,19 @@ def get_datetime(talk):
 
 
 def gen_string_datetimes(talk):
+
+    # Makes verbose date format string
+    # Windows-compatible
+    if sys.platform == "Windows":
+        usadate_str = "%a. %B %#d"
+    else:
+        usadate_str = "%a. %B %-d"
+    
     talk_dt = talk["datetime"]
     talk_date = talk_dt.date()
     talk["isodatetime"] = talk_dt.isoformat()
     talk["isodate"] = talk_date.isoformat()
-    talk["usadate"] = talk_date.strftime("%a. %B %-d")
+    talk["usadate"] = talk_date.strftime(usadate_str)
     talk["datesuffix"] = suffix(talk_date.day)
     talk["usatime"] = talk_dt.time().strftime("%I:%M%p").lower()
 
