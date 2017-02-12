@@ -20,7 +20,7 @@ from within the ``labtea`` directory. If this command fails, you can try running
 ## Generating site pages
 
 #### YAML database
-A series of talks for a given semester should be stored as a ``YAML`` file (e.g. ``fall2016.yaml``).
+A series of talks for a given semester should be stored as a ``YAML`` file (e.g. ``fall2016.yaml``). If you are unfamiliar with ``YAML``, see below for a few notes on syntax.
 
 ##### genpage.py 
 You can then generate a page based upon the file from a macOS, Unix, or Windows command line as follows:
@@ -68,19 +68,19 @@ But when you make an ``index.html`` file for a new semester, make sure to archiv
 3. Generate and push a new front page ``index.html`` for the new semester.
 
 
-#### YAML syntax
+## Notes on YAML syntax
 
 If you're unfamiliar with YAML (the human- and machine-readable database format used here) but are familiar with other key-value stores (e.g. JSON), you may find this useful: https://learnxinyminutes.com/docs/yaml/
 
 If you are wholly unfamiliar, the main traps to note are these:
 
-1) Quotation marks
+#### Quotation marks
 
 Single (') or double (") quotation marks are used in YAML to indicate a string (though they're typically not required for simple strings)
 
 If you need an actual quotation mark in a field (e.g. for a speaker with an apostrophe in their name or a talk title that includes double-quotation marks) begin by encasing your entire entry in double quotation marks. You can then type single quotation marks (as you normally would) wherever you need a single quotation mark or apostrophe. Wherever you need a double quotation mark, type two single quotation marks in a row (i.e. '').
 
-2) Times
+#### Times
 
 To be safe, always enter times as 24-hour clock times, with seconds. e.g. the traditional (at least in my day) lab tea time of 12:30pm should be rendered as 12:30:00.
 
