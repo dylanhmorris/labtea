@@ -50,7 +50,13 @@ Example:
 ``sh pushfile.sh index.html`` would push the file ``index.html`` to the remote server, overwriting any existing file with that name.
 
 #### Updating the website
-Generating and overwriting of ``index.html`` will be the main updating you do. The first time, make sure to save (or regenerate) previous semester's index filewith an archival name (e.g. ``labtea_fall2016.html``), push this archival version to the remote server, and add a link to this archived set of talks to the ``index.html.tmpl`` template.
+Most updates to the site will simply involve generating and overwriting ``index.html``. 
+
+But when you make an ``index.html`` file for a new semester, make sure to archive the previous semester's talks:
+
+1. Save (or regenerate) previous semester's index file, but give it an archival name (e.g. ``labtea_fall2016.html``)
+2. Push this archival file to the remote server, and add a link to it to the template ``index.html.tmpl``.
+3. Generate and push a new front page ``index.html`` for the new semester.
 
 
 #### YAML syntax
