@@ -2,7 +2,7 @@
 
 This repository provides resources for updating the [Theoretical Ecology Lab Tea](https://eeb.princeton.edu/labtea/) website.
 
-#### Dependencies
+## Setup / installing dependencies
 
 Most of the resources provided here require ``python3``. Unfortunately, previous versions of python are not currently supported.
 
@@ -17,7 +17,9 @@ from within the ``labtea`` directory. If this command fails, you can try running
     pip3 install -r requirements.txt
 
 
-#### Provided scripts
+## Generating site pages
+
+#### YAML database
 A series of talks for a given semester should be stored as a ``YAML`` file (e.g. ``fall2016.yaml``).
 
 ##### genpage.py 
@@ -43,13 +45,16 @@ Example:
 
 This generates a page called ``index.html`` within the default output directory ``site`` from a template ``index.html.tmpl`` found in the default template directory ``templates`` using data from a ``YAML`` file called ``fall2016.yaml``.
 
+## Pushing files to the remote server
 ##### pushfile.sh
-You can then push files to the remote server's public_html folder using the shell script ``pushfile.sh``. Warning: as the folder name suggests, that will make these files public online!
+You can push files to the remote server's public_html folder using the shell script ``pushfile.sh``. Warning: as the folder name suggests, this files will then be public online!
 
 Example:
 ``sh pushfile.sh index.html`` would push the file ``index.html`` to the remote server, overwriting any existing file with that name.
 
-#### Updating the website
+You can also push files manually using any Secure Copy Protocol (SCP) or Secure File Transfer Protocal (SFTP) client.
+
+## Updating the website
 Most updates to the site will simply involve generating and overwriting ``index.html``. 
 
 But when you make an ``index.html`` file for a new semester, make sure to archive the previous semester's talks:
