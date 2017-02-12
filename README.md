@@ -1,8 +1,10 @@
 # Theoretical Ecology Lab Tea website resources
 
+The resources provided below allow automated generation of pages for the Theoretical Ecology Lab Tea [website](https://eeb.princeton.edu/labtea/).
+
 #### Dependencies
 
-Most of these scripts require that you have ``python3``. Unfortunately, previous versions of python are not currently supported.
+Most of the resources provided here require ``python3``. Unfortunately, previous versions of python are not currently supported.
 
 The scripts require a few open source modules available PyPI, the Python Package index. The easiest way to install these dependencies is using the package manager ``pip3``.
 
