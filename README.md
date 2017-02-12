@@ -1,8 +1,18 @@
 Resources for building the Theoretical Ecology Lab Tea website.
 
-#### Installing dependencies
+#### Dependencies
 
-The python scripts provided here require certain modules available from PyPI, the Python Package index. If you have the python3 package manager ``pip3`` installed, these requirements can be installed from the macOS or Unix command line by running ``make install`` from within the ``labtea`` directory. Alternatively (and on Windows machines), you can run ``pip3 install -r requirements.txt``. If you do not have ``python3``, you can try ``pip install -r requirements.txt``, but note that the program has not been tested for use with ``python 2.xx``
+Most of these scripts require that you have ``python3``. Unfortunately, previous versions of python are not currently supported.
+
+The scripts require a few open source modules available PyPI, the Python Package index. The easiest way to install these dependencies is using the package manager ``pip3``.
+
+If you have ``pip3`` you can install the required modules by running
+
+    make install
+    
+from within the ``labtea`` directory. If this command you can try running
+    
+    pip3 install -r requirements.txt
 
 
 #### Provided scripts
