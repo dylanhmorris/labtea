@@ -47,7 +47,7 @@ This generates a page called ``index.html`` within the default output directory 
 You can then push files to the remote server's public_html folder using the shell script ``pushfile.sh``. Warning: as the folder name suggests, that will make these files public online!
 
 Example:
-``sh pushfile.sh index.html`` would push the index.html file to the remote server (overwriting any such file with that name that currently exists). 
+``sh pushfile.sh index.html`` would push the file ``index.html`` to the remote server, overwriting any existing file with that name.
 
 #### Updating the website
 Generating and overwriting of ``index.html`` will be the main updating you do. The first time, make sure to save (or regenerate) previous semester's index filewith an archival name (e.g. ``labtea_fall2016.html``), push this archival version to the remote server, and add a link to this archived set of talks to the ``index.html.tmpl`` template.
