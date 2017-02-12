@@ -31,11 +31,11 @@ The required arguments are:
 ``template``: the filename/filepath of the template you would like to use <br>
 ``datafile``: The filename/filepath of the date file you would like to use to fill in the template <br>
 
-The bracketed arguments are optional. If used, they must come before the required arguments and immediately after the given hyphen-and-letter prefix. The defaults are as follows:
+The bracketed arguments are optional. If used, they must come before the required arguments and immediately after the given hyphen-and-letter prefix.
 
-``OUTPUT_DIR`` (the output directory): ``site`` <br>
-``NAME EMAIL`` (the name and email address of the person doing the update): none <br>
-``TEMPLATE_DIR`` (which directory to look for the page template in): ``templates`` <br>
+``OUTPUT_DIR``: the output directory. Default value: ``site`` <br>
+``NAME EMAIL``: the name and email address of the person doing the update. Default value: none <br>
+``TEMPLATE_DIR``: the directory containing ``template``. Default value: ``templates`` <br>
 
 Example:
 
