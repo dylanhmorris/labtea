@@ -51,7 +51,7 @@ Note: Princeton may require you to be on its network/intranet in order to connec
 
 
 ##### pushfile.sh
-You can push files to the remote server's ``public_html`` folder using the shell script ``pushfile.sh``. Warning: as the folder name suggests, this files will then be public online!
+You can push files to the remote server's ``public_html/labtea`` folder using the shell script ``pushfile.sh``. Warning: as the folder name suggests, this files will then be public online!
 
 Example:
 ``sh pushfile.sh index.html`` would push the file ``index.html`` to the remote server, overwriting any existing file with that name.
