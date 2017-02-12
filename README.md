@@ -1,6 +1,6 @@
 # Theoretical Ecology Lab Tea website resources
 
-The resources provided below allow automated generation of pages for the Theoretical Ecology Lab Tea [website](https://eeb.princeton.edu/labtea/).
+This repository provides resources for updating the [Theoretical Ecology Lab Tea](https://eeb.princeton.edu/labtea/) website.
 
 #### Dependencies
 
