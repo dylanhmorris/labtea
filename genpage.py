@@ -106,7 +106,7 @@ def gen_string_datetimes(talk):
 
     # Makes verbose date format string
     # Windows-compatible
-    if sys.platform == "Windows":
+    if sys.platform in ["win32", "cygwin"]:
         usadate_str = "%a. %B %#d"
     else:
         usadate_str = "%a. %B %-d"
