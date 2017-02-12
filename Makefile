@@ -3,7 +3,7 @@
  $(error "No pip or pip3 in $(PATH)")
  else
  use_pip := pip
- $(warning "No pip3 in $(PATH). Using python2/pip installation, but note that program is not tested for python 2")
+ $(warning "WARNING: No pip3 found. Using python2/pip installation, but note that genpage.py is not tested for python 2")
  endif
  else
  use_pip := pip3
