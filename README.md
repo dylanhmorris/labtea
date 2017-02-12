@@ -9,15 +9,15 @@ The python scripts provided here require certain modules available from PyPI, th
 A series of talks for a given semester should be stored as a ``YAML`` file (e.g. ``fall2016.yaml``.
 
 ##### genpage.py 
-You can then generate a page based upon the file from a macOS or Unix command line as follows:
+You can then generate a page based upon the file from a macOS, Unix, or Windows command line as follows:
 
 ``python3 genpage.py [-o OUTPUT_DIR] [-u NAME EMAIL] [-t TEMPLATE_DIR] outfile template datafile``
 
 The required arguments are:
 
-``outfile``: The name of the file you would like to generate
-``template``: the filename/filepath of the template you would like to use
-``datafile``: The filename/filepath of the date file you would like to use to fill in the template
+``outfile``: The name of the file you would like to generate <br>
+``template``: the filename/filepath of the template you would like to use <br>
+``datafile``: The filename/filepath of the date file you would like to use to fill in the template <br>
 
 The bracketed arguments are optional. If used, they must come before the required arguments and immediately after the given hyphen-and-letter prefix. The defaults are as follows:
 
