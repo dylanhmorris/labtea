@@ -19,10 +19,10 @@ from within the ``labtea`` directory. If this command fails, you can try running
 
 ## Generating site pages
 
-#### YAML database
-A series of talks for a given semester should be stored as a ``YAML`` file (e.g. ``fall2016.yaml``). If you are unfamiliar with ``YAML``, see below for a few notes on syntax.
+#### Creating a YAML talk database
+A series of talks for a given semester should be stored as a YAML file (e.g. ``fall2016.yaml``). If you are unfamiliar with YAML, see below for a few notes on syntax.
 
-##### genpage.py 
+#### Generating pages with genpage.py 
 You can then generate a page based upon the file from a macOS, Unix, or Windows command line as follows:
 
 ``python3 genpage.py [-o OUTPUT_DIR] [-u NAME EMAIL] [-t TEMPLATE_DIR] outfile template datafile``
@@ -43,7 +43,7 @@ Example:
 
 ``python3 genpage.py -u "Dylan Morris" dylan@example.com index.html index.html.tmpl fall2016.yaml``
 
-This generates a page called ``index.html`` within the default output directory ``site`` from a template ``index.html.tmpl`` found in the default template directory ``templates`` using data from a ``YAML`` file called ``fall2016.yaml``.
+This generates a page called ``index.html`` within the default output directory ``site`` from a template ``index.html.tmpl`` found in the default template directory ``templates`` using data from a YAML file called ``fall2016.yaml``.
 
 ## Pushing files to the remote server
 
