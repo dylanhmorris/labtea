@@ -46,8 +46,12 @@ Example:
 This generates a page called ``index.html`` within the default output directory ``site`` from a template ``index.html.tmpl`` found in the default template directory ``templates`` using data from a ``YAML`` file called ``fall2016.yaml``.
 
 ## Pushing files to the remote server
+
+Note: Princeton may require you to be on its network/intranet in order to connect to the ``eeb.princeton.edu`` remote server. If you are not physically at Princeton, connect to the University's [SRA](https://www.net.princeton.edu/vpn/) VPN service.
+
+
 ##### pushfile.sh
-You can push files to the remote server's public_html folder using the shell script ``pushfile.sh``. Warning: as the folder name suggests, this files will then be public online!
+You can push files to the remote server's ``public_html`` folder using the shell script ``pushfile.sh``. Warning: as the folder name suggests, this files will then be public online!
 
 Example:
 ``sh pushfile.sh index.html`` would push the file ``index.html`` to the remote server, overwriting any existing file with that name.
@@ -55,7 +59,7 @@ Example:
 You can also push files manually using any Secure Copy Protocol (SCP) or Secure File Transfer Protocal (SFTP) client.
 
 ## Updating the website
-Most updates to the site will simply involve generating and overwriting ``index.html``. 
+Most updates to the Lab Tea website will just involve generating and overwriting ``index.html``. 
 
 But when you make an ``index.html`` file for a new semester, make sure to archive the previous semester's talks:
 
