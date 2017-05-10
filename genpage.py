@@ -79,23 +79,23 @@ def set_defaults(talk):
 
 def get_datetime(talk):
     if "date" not in talk.keys():
-        raise BaseException("Attempt to add a talk without a date. "
+        raise KeyError("Attempt to add a talk without a date. "
                             "Check that all talks in your data file have "
                             "a 'date: ' entry")
     if "time" not in talk.keys():
-        raise BaseException("Attempt to add a talk without a time. "
+        raise KeyError("Attempt to add a talk without a time. "
                             "Check that all talks in your data file have "
                             "a 'time: ' entry")
     if type(talk["date"]) is not dt.date:
-        raise BaseException("For at least one talk, could not "
-                            "parse date as a datetime.date object. "
-                            "Try entering dates in ISO8601 (YYYY-MM-DD) "
-                            "format in your data file")
+        raise TypeError("For at least one talk, could not "
+                        "parse date as a datetime.date object. "
+                        "Try entering dates in ISO8601 (YYYY-MM-DD) "
+                        "format in your data file")
 
     if type(talk["time"]) is not int:
-        raise BaseException("Could not parse time for at least one talk "
-                            "Try entering the time in HH:MM or HH:MM:SS format"
-                            "(24 hour clock) in your data file")
+        raise TypeError("Could not parse time for at least one talk "
+                        "Try entering the time in HH:MM or HH:MM:SS format"
+                        "(24 hour clock) in your data file")
 
     base_date = dt.datetime.combine(talk["date"],
                                     dt.datetime.min.time())
