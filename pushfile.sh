@@ -1,2 +1,2 @@
 #!/bin/bash
-scp $1 ecology@eeb.princeton.edu:public_html/labtea
+scp $1 ecology@eebgroups.princeton.edu:public_html/labtea
